@@ -24,5 +24,17 @@ class Player:
         else:
             return 'X'
     
+    def next_move(self):
+        row = int(input('what row?'))
+        while (row<0 or row >2):
+            row = int(input('Invalid...try again!'+'\n'+'what row?'))
+        col = int(input('what column?'))
+        while (col<0 or col >2):
+            col = int(input('Invalid..try again!'+'\n'+'what column?'))
+        checker = self.checker
+        
+        move=[checker,row,col]
+        return move
+    
 
             

@@ -55,6 +55,10 @@ class Board:
         and self.slots[1][1] == checker \
         and self.slots[2][2] == checker:
             return True
+        if self.slots[0][2] ==checker\
+        and self.slots[1][1] == checker \
+        and self.slots[2][0] == checker:
+            return True
         return False
     
     def is_horizontal_win(self,checker):

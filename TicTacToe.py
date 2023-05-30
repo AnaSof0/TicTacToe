@@ -3,11 +3,23 @@ from player import Player
 
 def TicTacToe():
     print('Welcome to TicTacToe!'+'\n')
-    choice = int(input("Do you want to play against a friend(1) or an AIPlayer?(2)"))
-    while (choice !=1 or choice!=2):
-        choice = int(input("Do you wnat to play against a friend(1) or an AIPlayer?(2)"))
+    choice = int(input("Do you want to play against a friend(1) or an AIPlayer?(2)  "+'\n'))
+    while (choice != 1 and choice!= 2):
+        choice = int(input("Try again...Do you want to play against a friend (1) or an AIPlayer? (2) " +'\n'))
     if (choice==1):
         friend_play()
+    else:
+        AI_play()
+
+def AI_play():
+    P1= (input('Please enter the name of the first player: '))
+    P2= "AI"
+    print()
+    print('Welcome! '+'\n'+ P1+', you\'ll be X ')
+    p1=Player('X',P1)
+    p2=Player('O',P2)
+    print()
+    b=Board()
         
     
 def friend_play():    
@@ -29,26 +41,10 @@ def friend_play():
 
 def play(p,b):
     print(p.name+"'s turn")
-    row = int(input('what row?'))
-    while (row<0 or row >2):
-        row = int(input('what row?'))
-    col = int(input('what column?'))
-    while (col<0 or col >2):
-        col = int(input('what column?'))
-        
-        
-    checker = p.checker
-    
-    
-    move=[checker,row,col]
+    move=p.next_move()
     while (not b.isValid(move)):
         print("It appears that cell is already in use... try again:")
-        row = int(input('what row?'))
-        while (row<0 or row >2):
-            row = int(input('what row?'))
-        while (col<0 or col >2):
-            col = int(input('what column?'))
-        move=[checker,row,col]
+        move=p.nextmove()
         
     
     b.add_move(move)
