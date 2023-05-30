@@ -3,25 +3,9 @@ from player import Player
 
 def TicTacToe():
     print('Welcome to TicTacToe!'+'\n')
-    choice = int(input("Do you want to play against a friend(1) or an AIPlayer?(2)  "+'\n'))
-    while (choice != 1 and choice!= 2):
-        choice = int(input("Try again...Do you want to play against a friend (1) or an AIPlayer? (2) " +'\n'))
-    if (choice==1):
-        friend_play()
-    else:
-        AI_play()
+    friend_play()
 
-def AI_play():
-    P1= (input('Please enter the name of the first player: '))
-    P2= "AI"
-    print()
-    print('Welcome! '+'\n'+ P1+', you\'ll be X ')
-    p1=Player('X',P1)
-    p2=Player('O',P2)
-    print()
-    b=Board()
-        
-    
+
 def friend_play():    
     P1= (input('Please enter the name of the first player: '))
     P2 = (input('Please enter the name of the second player: '))
